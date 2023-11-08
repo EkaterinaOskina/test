@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сократика</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <script defer src="main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      loadingPage();
+    })
+  </script>
+</head>
+
+<body class="page">
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="#">
+        <img src="img/logo.png" alt="Логотип">
+      </a>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <h1 class="main-title visually-hidden">
+        Сократика
+      </h1>
+      <div class="content flex">
+        <div class="left">
+          <img class="illustration" src="img/illustration.png" alt="">
+        </div>
+        <div class="right">
+          <h2 class="title">
+            01&nbsp;Заполни форму
+          </h2>
+          <form class="form">
+            <div class="form__top">
+              <div class="main-data flex">
+                <div class="main-data__lesson-topic box">
+                  <input class="form__input" id="lesson-topic" type="text" name="lesson-topic"
+                    placeholder="Напиши что-то конкретное">
+                  <label class="form__label" for="lesson-topic">
+                    Тема урока
+                  </label>
+                  <button class="btn-clear btn-reset" type="button">
+                    <svg class="btn-clear__icon">
+                      <use xlink:href="img/sprite.svg#clear"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="main-data__class box">
+                  <!-- <select class="form__select" id="class" name="class">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select> -->
+                  <div class="form__select">
+                    <div class="select__header flex" tabindex="0">
+                      <span class="select__current">1</span>
+                      <svg class="select__icon">
+                        <use xlink:href="img/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </div>
+                    <div class="select__body">
+                      <div class="select__option" tabindex="0">
+                        <span class="select__option--text">1</span>
+                        <svg class="select__option--icon">
+                          <use xlink:href="img/sprite.svg#tick"></use>
+                        </svg>
+                      </div>
+                      <div class="select__option" tabindex="1">
+                        <span class="select__option--text">2</span>
+                        <svg class="select__option--icon">
+                          <use xlink:href="img/sprite.svg#tick"></use>
+                        </svg>
+                      </div>
+                      <div class="select__option" tabindex="2">
+                        <span class="select__option--text">3</span>
+                        <svg class="select__option--icon">
+                          <use xlink:href="img/sprite.svg#tick"></use>
+                        </svg>
+                      </div>
+                      <div class="select__option" tabindex="3">
+                        <span class="select__option--text">4</span>
+                        <svg class="select__option--icon">
+                          <use xlink:href="img/sprite.svg#tick"></use>
+                        </svg>
+                      </div>
+                      <div class="select__option" tabindex="4">
+                        <span class="select__option--text">5</span>
+                        <svg class="select__option--icon">
+                          <use xlink:href="img/sprite.svg#tick"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <label class="form__label">
+                    Класс
+                  </label>
+                </div>
+              </div>
+              <div class="options">
+                <ul class="options__list list-reset flex">
+                  <!-- <li class="options__item">
+                    Генетика
+                  </li>
+                  <li class="options__item">
+                    Анатомия человека
+                  </li>
+                  <li class="options__item">
+                    Вулканы
+                  </li>
+                  <li class="options__item">
+                    Зимние виды спорта
+                  </li>
+                  <li class="options__item">
+                    Радуга
+                  </li>
+                  <li class="options__item">
+                    Индийская культура
+                  </li> -->
+                </ul>
+                <button class="options__btn btn-reset flex" type="button">
+                  <svg class="options__btn--icon">
+                    <use xlink:href="img/sprite.svg#add"></use>
+                  </svg>
+                  <span class="options__btn--text">
+                    Показать больше вариантов
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="purpose-lesson box">
+              <textarea class="form__textarea" id="purpose-lesson" name="purpose-lesson"
+                placeholder="Напиши свою учебную цель"></textarea>
+              <label class="form__label" for="purpose-lesson">
+                Цель урока
+              </label>
+              <span class="purpose-lesson__error">Enter your name</span>
+              <span class="purpose-lesson__counter">
+                <span class="purpose-lesson__counter--fact">0</span> / 200
+              </span>
+            </div>
+            <div class="buttons flex">
+              <button class="form__btn btn-reset btn-back" type="button">
+                Назад
+              </button>
+              <button class="form__btn btn-reset btn-next" disabled>
+                Следующий шаг
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

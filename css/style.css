@@ -1,0 +1,523 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --dark-text-color: #343434;
+  --gray-text-color: #9a9a9a;
+  --blue-color: #3ca9f0;
+  --hover-blue-color: #545DB6;
+  --red-color: #ff395d;
+  --light-gray-color: #eaeaea;
+  --light-gray-bg-color: #eeeff0;
+  --white-color: #fff;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter-Regular'), local('Inter Regular'),
+    url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter-Medium'), local('Inter Medium'),
+    url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter-SemiBold'), local('Inter SemiBold'),
+    url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: local('RobotoSlab-Bold'), local('Roboto Slab Bold'),
+    url('../fonts/RobotoSlab-Bold.woff2') format('woff2'),
+    url('../fonts/RobotoSlab-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* glob */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 22px;
+  max-width: 1660px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* header */
+.header {
+  padding: 60px 0;
+}
+
+.logo {
+  display: inline-block;
+  width: 208px;
+  font-size: 0;
+}
+
+.logo:focus-visible {
+  outline: none;
+}
+
+
+/* main */
+.main {
+  padding: 48px 0;
+}
+
+.content {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.left {
+  margin-right: 20px;
+  max-width: 658px;
+  width: 100%;
+}
+
+.illustration {
+  display: block;
+  width: 100%;
+}
+
+.right {
+  padding-top: 40px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 60px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 110%;
+  color: var(--dark-text-color);
+}
+
+.form__top {
+  margin-bottom: 48px;
+}
+
+.main-data {
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 16px;
+}
+
+.box {
+  position: relative;
+}
+
+.main-data__lesson-topic {
+  width: calc(100% - 120px);
+}
+
+.main-data__class {
+  width: 120px;
+}
+
+.form__input,
+/* .form__select, */
+.select__header,
+.form__textarea {
+  width: 100%;
+  padding: 16px 15px;
+  border: 1.25px solid var(--light-gray-color);
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: normal;
+  color: var(--dark-text-color);
+}
+
+.form__input,
+.form__select {
+  height: 56px;
+}
+
+.form__select {
+  position: relative;
+}
+
+.select__header {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.select__icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.is-active .select__icon {
+  -webkit-transform: rotate(180deg) translateY(50%);
+  -ms-transform: rotate(180deg) translateY(50%);
+  transform: rotate(180deg) translateY(50%);
+}
+
+.select__body {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  display: none;
+  width: 100%;
+  border: 1.25px solid var(--light-gray-color);
+  border-radius: 12px;
+  background-color: var(--white-color);
+  -webkit-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
+
+.is-active .select__body {
+  display: block;
+}
+
+.select__option {
+  position: relative;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.select__option--text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+  color: var(--dark-text-color);
+}
+
+.select__option--icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  visibility: hidden;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.select__option:focus-visible {
+  outline: none;
+}
+
+/* .select__option:hover .select__option--text, */
+.select__option.active .select__option--text {
+  font-weight: 600;
+}
+
+/* .select__option:hover .select__option--icon, */
+.select__option.active .select__option--icon {
+  visibility: visible;
+}
+
+.form__textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form__input {
+  padding-right: 50px;
+}
+
+.form__input::-webkit-input-placeholder,
+.form__textarea::-webkit-input-placeholder {
+  color: var(--gray-text-color);
+}
+
+.form__input::-moz-placeholder,
+.form__textarea::-moz-placeholder {
+  color: var(--gray-text-color);
+}
+
+.form__input:-ms-input-placeholder,
+.form__textarea:-ms-input-placeholder {
+  color: var(--gray-text-color);
+}
+
+.form__input::-ms-input-placeholder,
+.form__textarea::-ms-input-placeholder {
+  color: var(--gray-text-color);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--gray-text-color);
+}
+
+.form__input:focus-visible,
+/* .form__select:focus-visible, */
+.select__header:focus-visible,
+.is-active .select__header,
+.form__textarea:focus-visible {
+  outline: none;
+  border-color: var(--blue-color);
+}
+
+.form__input:focus-visible+.form__label,
+/* .form__select:focus-visible + .form__label, */
+.is-active+.form__label,
+.form__textarea:focus-visible+.form__label {
+  color: var(--blue-color);
+}
+
+.form__input.valid~.btn-clear {
+  visibility: visible;
+}
+
+.form__textarea.invalid {
+  border-color: var(--red-color);
+}
+
+.form__textarea.invalid+.form__label {
+  color: var(--red-color);
+}
+
+.form__textarea.invalid~.purpose-lesson__error {
+  visibility: visible;
+}
+
+.form__textarea.invalid~.purpose-lesson__counter {
+  color: var(--red-color);
+}
+
+.form__label {
+  position: absolute;
+  top: -18px;
+  left: 15px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--dark-text-color);
+  background-color: var(--white-color);
+}
+
+.btn-clear {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  visibility: hidden;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.btn-clear__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.options__list {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.options__item {
+  padding: 10px 16px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--dark-text-color);
+  background-color: var(--light-gray-bg-color);
+  cursor: pointer;
+}
+
+.options__btn {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.options__btn--icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  stroke: var(--blue-color);
+  -webkit-transition: stroke 0.15s ease-in-out;
+  -o-transition: stroke 0.15s ease-in-out;
+  transition: stroke 0.15s ease-in-out;
+}
+
+.options__btn--text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  color: var(--blue-color);
+  -webkit-transition: color 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+
+.options__btn:focus-visible {
+  outline: none;
+}
+
+.options__btn:focus-visible .options__btn--icon,
+.options__btn:hover .options__btn--icon {
+  stroke: var(--hover-blue-color);
+}
+
+.options__btn:focus-visible .options__btn--text,
+.options__btn:hover .options__btn--text {
+  color: var(--hover-blue-color);
+}
+
+.purpose-lesson {
+  margin-bottom: 27px;
+}
+
+.purpose-lesson__error {
+  position: absolute;
+  bottom: -18px;
+  left: 17px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--red-color);
+  visibility: hidden;
+}
+
+.purpose-lesson__counter {
+  position: absolute;
+  right: 17px;
+  bottom: -18px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--dark-text-color);
+}
+
+.buttons {
+  gap: 16px;
+}
+
+.form__btn {
+  padding: 18px 52px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -o-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.form__btn:focus-visible {
+  outline: none;
+  background-color: var(--hover-blue-color);
+}
+
+.form__btn:hover {
+  background-color: var(--hover-blue-color);
+}
+
+.btn-back {
+  border: 1px solid var(--blue-color);
+  color: var(--blue-color);
+  -webkit-transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  -o-transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn-back:focus-visible,
+.btn-back:hover {
+  border-color: var(--hover-blue-color);
+  color: var(--white-color);
+  background-color: var(--hover-blue-color);
+}
+
+.btn-next {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+.btn-next:disabled {
+  background-color: var(--light-gray-bg-color);
+  color: var(--gray-text-color);
+}
